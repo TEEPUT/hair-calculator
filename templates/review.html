@@ -1,0 +1,97 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+        <script src="https://code.jquery.com-3.1.1.min.js"></script>
+
+        <script src="../js/bootstrap.min.js"></script>
+
+        <!-- Css -->
+        <link rel="stylesheet" href="../static/css/filter.css">
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+
+        <!-- 폰트 어썸 -->
+        <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+
+        <title>리뷰</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default" style="background-color: #CEAB93;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="" style="color: black;">리뷰</a>
+            </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+            <ul class="nav navbar-nav">
+                    <li><a href="/reviews.html" style="color: black;">게시판</a></li>
+            </ul>   
+        </div>
+        </nav>
+        <div class="col-Lg-4"></div>
+        <div class="container">
+            <div class="row">
+            <form method="post" action="/add_review"> <!-- 이 부분을 수정하여 데이터를 추가할 URL로 지정 -->
+                <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="background-color: #E3CAA5; text-align: center;">리뷰작성 양식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="제목" name="title" maxlength="50" style="background-color: #E3CAA5;"></td>
+                        </tr>
+                        <tr>
+                            <td><textarea class="form-control" placeholder="내용" name="content" maxlength="2048" style="height: 350px; background-color: #E3CAA5;"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" class="btn btn-primary pull-right" value="글쓰기" style="background-color: #E3CAA5;">
+            </form>
+            </div>
+        </div>
+
+  <!-- 네비게이션 -->
+  <section>
+    <nav>    
+        <div class="navbar">
+           <a href="main.html" class="nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+           <a href="map.html" class="nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+           {% if nickname %}
+           <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+           {% else %}
+           <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+           {% endif %}
+ 
+           {% if nickname %}
+               <a href="personal.html" class="nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+           {% else %}
+               <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+           {% endif %}
+ 
+           {% if nickname %}
+               <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+           {% else %}
+               <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+           {% endif %}
+         </div>
+     </nav>
+   </section>
+   <!-- 네비게이션 -->
+
+    </body>
+    </html>

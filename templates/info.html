@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <!-- 인코딩 및 타이틀 -->
+	<meta charset="utf-8"/>
+	<title> StyleHC 프로필 </title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/info.css">
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+    <!-- 자바 스크립트 -->
+    <script src="../static/js/info.js"></script>
+</head>
+<body>
+
+    <form id="profile-form" method="post" action="/info-profile" enctype="multipart/form-data">
+        <!-- 커버 사진 업로드 -->
+        <input type="file" id="background-input" name="cover_image" accept="image/*" style="display:none;" onchange="previewImage(event, 'cover')">
+        <div class="cover-photo" onclick="document.getElementById('background-input').click();">
+            <img id="cover-image" src="../static/img/mainpr/cover.png" alt="커버 사진">
+        </div>
+    
+        <!-- 프로필 사진 업로드 -->
+        <input type="file" id="profile-input" name="profile_image" accept="image/*" style="display:none;" onchange="previewImage(event, 'profile')">
+        <div class="profile-image" onclick="document.getElementById('profile-input').click();">
+            <img id="profile-image" src="../static/img/mainpr/profile.png" alt="프로필 이미지">
+        </div>
+    
+        <!-- 추가 정보 입력 -->
+        <div class="input-area-container">
+        <h1>정보</h1>
+        <textarea name="info" placeholder="정보" class="input-area"></textarea>
+        <h1>영업시간</h1>
+        <textarea name="hours" placeholder="영업시간" class="input-area"></textarea>
+        <h1>메뉴</h1>
+        <textarea name="menu" placeholder="메뉴" class="input-area"></textarea>
+        <h1>디자이너</h1>
+        <textarea name="designer" placeholder="디자이너" class="input-area"></textarea>
+        
+        <!-- 제출 버튼 -->
+        <button type="submit" class="submit-btn">저장</button>
+
+    </div>
+    </form>
+    
+    <!-- 네비게이션 -->
+  <section>
+    <nav>    
+        <div class="navbar">
+           <a href="main.html" class="nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+           <a href="map.html" class="active nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+           {% if nickname %}
+           <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+           {% else %}
+           <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+           {% endif %}
+ 
+           {% if nickname %}
+               <a href="personal.html" class="nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+           {% else %}
+               <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+           {% endif %}
+ 
+           {% if nickname %}
+               <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+           {% else %}
+               <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+           {% endif %}
+         </div>
+     </nav>
+   </section>
+   <!-- 네비게이션 -->
+
+   <!-- 자바 스크립트 -->
+   <script src="../static/js/info.js"></script>
+
+</body>
+</html>

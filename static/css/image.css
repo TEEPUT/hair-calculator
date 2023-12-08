@@ -1,0 +1,482 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFBE9;
+  overflow-x: hidden;
+  height: 2300px;
+}
+
+
+.body {
+ margin-left: 10%;
+ margin-right: 10%;
+}
+
+.logo {
+  max-width: 400px;
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 400px;
+  height: 50%;
+  margin-bottom: 30px;
+  margin-top: 20px; /* 로고를 위로 20px 이동 */
+}
+
+/*네비게이션*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 9999;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+  .navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+  }
+  
+  .navbar a.active {
+    background-color: #E3CAA5;
+    color: white;
+  }
+  
+  .main {
+    margin-bottom: 30px;
+  }
+
+  .nav-container {
+    width: 20%;
+  }
+  
+/*네비게이션 끝*/
+/* 네비게이션 스타일 업데이트 */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #CEAB93;
+  padding: 0px;
+}
+.nav-container {
+  text-align: center;
+  text-decoration: none;
+  color: #FFFBE9;
+  padding: 10px 0;
+  flex: 1; /* 수정: 동일한 너비로 설정 */
+}
+.nav-container i {
+  font-size: 24px;
+}
+.active {
+  background-color: #AD8B73;
+}
+  
+/* Copyright 2023 The MediaPipe Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. */
+
+@use "@material";
+
+
+h1 {
+  color: #007f8b;
+}
+
+h2 {
+  clear: both;
+}
+
+em {
+  font-weight: bold;
+}
+
+video {
+  clear: both;
+  display: block;
+}
+
+canvas {
+  position: relative;
+  left: 50%;
+  clear: both;
+}
+
+section {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.removed {
+  display: none;
+}
+
+.invisible {
+  opacity: 0.2;
+}
+
+.videoView,
+.segmentOnClick {
+  position: relative;
+  float: left;
+  width: 48%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.segmentOnClick p {
+  padding: 5px;
+  background-color: #007f8b;
+  color: #fff;
+  z-index: 2;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+.segmentOnClick {
+  z-index: 0;
+}
+
+.segmentOnClick canvas {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.segmentOnClick img {
+  width: 100%;
+}
+
+
+.file-upload {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .file-upload-btn {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: #CEAB93;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #CEAB93;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .file-upload-btn:hover {
+    background: #a98c79;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
+  
+  .file-upload-btn:active {
+    border: 0;
+    transition: all .2s ease;
+  }
+  
+  .file-upload-content {
+    display: none;
+    text-align: center;
+  }
+  
+  .file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .image-upload-wrap {
+    margin-top: 20px;
+    border: 4px dashed #CEAB93;
+    position: relative;
+    height: 400px;
+  }
+  
+  .image-dropping,
+  .image-upload-wrap:hover {
+    background-color: #CEAB93;
+    border: 4px dashed #ffffff;
+  }
+  
+  .image-title-wrap {
+    padding: 0 15px 15px 15px;
+    color: #222;
+  }
+  
+  .drag-text {
+    text-align: center;
+  }
+  
+  .drag-text h3 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: black;
+    padding: 60px 0;
+  }
+  
+  .file-upload-image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    max-height: 500px;
+    max-width: 500px;
+    margin: auto;
+    padding: 0px;
+  }
+  
+  .remove-image {
+    position: relative;
+    top: 50%;
+    left: 170px;
+    display: block;
+    width: 200px;
+    margin: 0;
+    color: #fff;
+    background: #CEAB93;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #b39582;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .remove-image:hover {
+    background: #a98c79;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
+  
+  .remove-image:active {
+    border: 0;
+    transition: all .2s ease;
+  }
+  
+  .transformer {
+    left: 50%;
+    top: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+  }
+
+#canvasContainer {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    position: relative;
+}
+
+#backgroundPreview {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#overlayPreview {
+    max-width: 50%;
+    cursor: move;
+}
+/* 이미지 크기 조절 핸들 스타일 */
+.ui-resizable-handle {
+    background: #f5f5f5;
+    border: 1px solid #aaa;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+}
+
+.ui-resizable-se {
+    right: -4px;
+    bottom: -4px;
+    cursor: se-resize;
+}
+
+.overlayCanvas {
+  position: absolute;
+  top: 300px;
+}
+
+.mapper {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-mapper {
+  position: relative;
+  top: 500px;
+  background-color: none;
+  z-index: 500;
+  margin: auto;
+  left: 17%;
+}
+
+.body-table {
+  height: 350px;
+}
+
+.body-check {
+  text-align: center;
+  height: 300px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 1rem auto;
+  background-color: white;
+}
+
+
+
+/* 테이블 행 */
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
+}
+
+th {
+  background-color: #AD8B73;
+  color: #ffffff;
+}
+
+/* 테이블 올렸을 때 */
+tbody tr:hover {
+  background-color: #d3d3d3;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* 테이블 비율 */
+th:nth-child(1),
+td:nth-child(1) {
+  width: 10%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 20%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 20%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 20%;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  width: 10%;
+}
+
+tr:nth-child(even) {
+  background-color: #fff6f6;
+}
+
+.select-btn {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  height: 35px;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.select-btn:hover {
+  background-color: #927762;
+  color: white;
+}
+
+.main-h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #000000;
+}
+
+.main-h2 {
+ font-size: 1.1em;
+ text-align: center;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.next-btn {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  height: 35px;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.next-btn:hover {
+  background-color: #927762;
+  color: white;
+}
+
+.next-btng {
+  text-align: center;
+}
+
+.image-read {
+  height: 300px;
+  width: auto;
+}

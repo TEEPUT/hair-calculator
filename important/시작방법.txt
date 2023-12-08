@@ -1,0 +1,17 @@
+실행
+
+html 오픈 도메인
+ngrok start --config=ngrok-config.yml your-app
+
+
+
+StyleHC expo 아이폰 다운로드
+cd StyleHC
+expo start
+
+
+
+안드로이드 다운로드
+eas build -p android --profile preview
+
+https://expo.dev/artifacts/eas/q4JYck6NWdk5N1Nx2nGeEU.apk

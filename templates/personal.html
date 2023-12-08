@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 인코딩 및 타이틀 -->
+    <meta charset="UTF-8">
+    <title> Style 퍼스널컬러 사진업로드 </title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/personal.css">
+
+    <!-- js -->
+    <script src="../static/js/personal.js"></script>
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id ='wrap'>
+
+<!-- 로그인 정보 확인 -->
+
+<div class="user-info">
+    {% if nickname %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px;">
+            <span style="font-weight: bold;">어서오세요, {{ nickname }}님!</span>
+            <a href="/logout" style="text-decoration: none; color: #AD8B73; margin-left: 10px;">로그아웃</a>
+        </p>
+    {% else %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px;">
+            로그인 되지 않았습니다.
+        </p>
+    {% endif %}
+</div>
+
+<!-- 로고 및 검색기능 -->
+
+        <div class="container-fluid">
+            <div class="banner_main">
+                <div class="container">
+                    <div><a href="main.html"><img src="../static/img/logo.png" class="logo"></a></div>
+                </div>
+            </div>
+        </div>
+    
+<!-- 로고 및 검색기능 끝 -->
+
+
+
+<!-- 컨텐츠 내용 -->
+<section>
+    <div id="root">
+        <h2 class="title">파일 업로드</h2>
+        <hr>
+        <form action="personal" method="post" enctype="multipart/form-data">
+            <div class="contents">
+                <div class="upload-box">
+                    <div id="drop-file" class="drag-file">
+                        <img src="" alt="미리보기 이미지" class="preview">
+                    </div>
+                    <label class="file-label" for="chooseFile">파일 선택하기</label>
+                    <input class="file" id="chooseFile" name="uploadedFile" type="file" onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
+                    <div class="result-button">
+                        <input type="submit" class="button" value="결과 보기">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+<!-- 푸터 -->
+        <footer>
+            <nav>
+                <a href='https://cocoder.tistory.com' target='_blank'>Blog</a> |
+                <a href='https://github.com/cocoder16' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>저자 : cocoder</span><br/>
+                <span>이메일 : cocoder16@gmail.com</span><br/>
+                <span>Copyright 2020. cocoder. All Rights Reserved.</span>
+            </p>
+        </footer>
+<!-- 네비게이션 -->
+
+        <section>
+            <nav>    
+                <div class="navbar">
+                   <a href="main.html" class="nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+                   <a href="map.html" class="nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+                   {% if nickname %}
+                   <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+                   {% else %}
+                   <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+                   {% endif %}
+         
+                   {% if nickname %}
+                       <a href="personal.html" class="active nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+                   {% else %}
+                       <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+                   {% endif %}
+         
+                   {% if nickname %}
+                       <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+                   {% else %}
+                       <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+                   {% endif %}
+                 </div>
+             </nav>
+        </section>
+    </div>
+
+
+</body>
+</html>

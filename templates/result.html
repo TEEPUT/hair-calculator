@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 인코딩 및 타이틀 -->
+    <meta charset="UTF-8">
+    <title> StyleHC 퍼스널컬러 결과 </title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/result.css">
+
+    <!-- js -->
+    <script src="../static/js/result.js"></script>
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+    <!-- 차트 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- 제이스델리버 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div id ='wrap'>
+
+<!-- 로그인 정보 확인 -->
+
+<div class="user-info">
+    {% if nickname %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px;">
+            <span style="font-weight: bold;">어서오세요, {{ nickname }}님!</span>
+            <a href="/logout" style="text-decoration: none; color: #AD8B73; margin-left: 10px;">로그아웃</a>
+        </p>
+    {% else %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px;">
+            로그인 되지 않았습니다.
+        </p>
+    {% endif %}
+</div>
+
+<!-- 로고 및 검색기능 -->
+
+        <div class="container-fluid">
+            <div class="banner_main">
+                <div class="container">
+                    <div><a href="main.html"><img src="../static/img/logo.png" class="logo"></a></div>
+                </div>
+            </div>
+        </div>
+    
+<!-- 로고 및 검색기능 끝 -->
+
+
+
+
+<!-- 컨텐츠 내용 -->
+    
+        <section>
+            <div class="container">
+                <h1>퍼스널컬러 결과</h1>
+                {% if image_filename %}
+                <img src="{{ url_for('uploaded_file', filename=image_filename) }}" alt="Uploaded Image" class="uploaded-image">
+                {% else %}
+                <p>No image uploaded yet</p>
+                {% endif %}
+
+                <div>
+                  <canvas id="analysisChart"></canvas>
+                </div>
+
+                <h2>당신의 퍼스널컬러: <span class="personal-color">{{ personal_color }}</span></h2>
+                <p>당신의 사진 분석을 바탕으로, 당신은 퍼스널컬러가 {{ personal_color }} <br>아래는 당신에게 어울리는 염색 추천입니다:</p>
+                <div class="hair-dye-recommendation">
+
+                    <h3>염색 추천</h3>
+              
+
+                    {% for color_name, color_info in recommended_colors %}
+                      <div class="recommended-color">
+                        <h4>{{ color_name }}</h4>
+                        <p>{{ color_info.description }}</p>
+                        <div class="color-palette">
+                          <div class="color-box" style="background-color: {{ color_info.css_color }};"></div>
+                        </div>
+                      </div>
+                    {% endfor %}
+
+                  </div>
+              </div>
+        </section>
+
+
+<!-- 푸터 -->
+        <footer>
+            <nav>
+                <a href='https://cocoder.tistory.com' target='_blank'>Blog</a> |
+                <a href='https://github.com/cocoder16' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>저자 : cocoder</span><br/>
+                <span>이메일 : cocoder16@gmail.com</span><br/>
+                <span>Copyright 2020. cocoder. All Rights Reserved.</span>
+            </p>
+        </footer>
+<!-- 네비게이션 -->
+
+        <section>
+          <nav>    
+            <div class="navbar">
+               <a href="main.html" class="nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+               <a href="map.html" class="nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+               {% if nickname %}
+               <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+               {% else %}
+               <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+               {% endif %}
+     
+               {% if nickname %}
+                   <a href="personal.html" class="active nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+               {% else %}
+                   <a href="login.html" class="active nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+               {% endif %}
+     
+               {% if nickname %}
+                   <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+               {% else %}
+                   <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+               {% endif %}
+             </div>
+         </nav>
+        </section>
+    </div>
+
+
+    <script>
+      const graphData = {{ graph_data|tojson|safe }};
+  const ctx = document.getElementById('analysisChart').getContext('2d');
+  const analysisChart = new Chart(ctx, {
+      type: 'bar',  // 'bar' 타입 사용
+      data: {
+          labels: ['피부', '눈썹', '눈'],
+          datasets: [{
+              label: 'Lab_b',
+              data: graphData['Lab_b'],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }, {
+              label: 'Hsv_s',
+              data: graphData['Hsv_s'],
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          indexAxis: 'y',  // 가로 막대 그래프를 위한 설정
+          scales: {
+              x: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+    </script>
+
+
+</body>
+</html>

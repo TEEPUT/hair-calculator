@@ -1,0 +1,475 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFBE9;
+  }
+
+  #wrap {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+  }
+  
+  /*네비게이션*/
+  .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      z-index: 9999;
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      text-decoration: none;
+      font-size: 25px;
+    }
+    
+    .navbar a:hover {
+      background: #f1f1f1;
+      color: black;
+    }
+    
+    .navbar a.active {
+      background-color: #E3CAA5;
+      color: white;
+    }
+    
+    .main {
+      margin-bottom: 30px;
+    }
+  
+    .nav-container {
+      width: 20%;
+    }
+    
+  /*네비게이션 끝*/
+  /* 네비게이션 스타일 업데이트 */
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #CEAB93;
+    padding: 0px;
+  }
+  .nav-container {
+    text-align: center;
+    text-decoration: none;
+    color: #FFFBE9;
+    padding: 10px 0;
+    flex: 1; /* 수정: 동일한 너비로 설정 */
+  }
+  .nav-container i {
+    font-size: 24px;
+  }
+  .active {
+    background-color: #AD8B73;
+  }
+  
+  /* 하단 탭 네비게이션 끝 */
+  
+  .user-info {
+    text-align: left;
+  }
+  .container-fluid {
+    background-color: #FFFBE9;
+    padding: 10px 0;
+  }
+  .banner_main {
+    text-align: center;
+    padding: 20px;
+  }
+  .logo {
+    max-width: 400px;
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 50%;
+    margin-bottom: 30px;
+    margin-top: 20px; /* 로고를 위로 20px 이동 */
+  }
+  .search {
+    margin-top: 20px;
+    text-align: center;
+  }
+  input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    background-color: #CEAB93;
+    color: #AD8B73;
+  }
+  button[type="submit"] {
+    background-color: #E3CAA5;
+    color: #AD8B73;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* 추가 컨텐츠 스타일 */
+  .main-contents {
+    display: flex;
+    flex-wrap: nowrap; /* 줄 바꿈을 방지하여 가로로 요소를 정렬 */
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .main-box{
+    background-color: #FFFBE9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* 3개의 슬라이드를 가로로 나란히 배치 */
+    margin-right: 20px; /* 슬라이드 간 간격 설정 */
+    transition: transform 0.3s ease-in-out;
+    display: inline-block; /* 인라인 블록 요소로 변경하여 가로로 나란히 표시 */
+    vertical-align: top; /* 항목을 상단 정렬 */
+    position: relative; /* 추가: 이미지 위치 지정 */
+  }
+  
+  
+  .contents-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #CEAB93;
+    color: #FFFBE9;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .contents-btn:hover {
+    background-color: #AD8B73;
+  }
+  
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+  
+  
+  
+  
+  * {box-sizing:border-box} 
+  
+  /* 슬라이드쇼 컨테이너의 디자인 */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* 이미지를 숨기는데 사용 */
+  .main-box {
+      display: none;
+  }
+  
+  /* 다음, 이전 버튼 */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #AD8B73;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  /* "다음 버튼"을 오른쪽에 위치 */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* 마우스를 올리면 배경색을 변경 */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  
+  /* 하단의 점들 */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* 페이드 효과 */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* 네비게이션 스타일 업데이트 */
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #CEAB93;
+    padding: 0px;
+  }
+  .nav-container {
+    text-align: center;
+    text-decoration: none;
+    color: #FFFBE9;
+    padding: 10px 0;
+    flex: 1; /* 수정: 동일한 너비로 설정 */
+  }
+  .nav-container i {
+    font-size: 24px;
+  }
+  .active {
+    background-color: #AD8B73;
+  }
+  
+  
+  
+  /* 스타일러와 미용실 정보 스타일 */
+  .stylist, .salon {
+    background-color: #FFFbe9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  
+  .stylist img,.salon img {
+    width: 130px;
+    height: 130px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    float: left;
+  }
+  
+  .salon-content-text {
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 5px;
+  }
+  
+  .salon-content-main {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  .review {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-rating {
+    font-size: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .review-count {
+    color: #888;
+    font-size: 20px;
+    margin-top: 7px;
+  }
+  
+  .time {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 7px;
+  }
+  
+  .stylist-content-text {
+    font-weight: bold; /* 텍스트를 굵은 글꼴로 설정합니다. */
+    font-size: 24px; /* 텍스트 크기를 조정합니다. */
+  }
+  
+  .stylist-content-main {
+    color: gray; /* 텍스트 색상을 회색으로 설정합니다. */
+    font-size: 14px; /* 텍스트 크기를 조정합니다. */
+    font-style: italic; /* 텍스트에 이탤릭체를 적용합니다. */
+  }
+  
+  #hair {
+    display: inline-block; /* 네모난 배경을 위해 인라인 블록으로 설정합니다. */
+    padding: 5px 10px; /* 배경의 여백을 설정합니다. */
+    background-color: #b7b3b1; /* 배경색을 설정합니다. */
+    color: white; /* 텍스트 색상을 흰색으로 설정합니다. */
+    font-weight: bold; /* 텍스트를 굵은 글꼴로 설정합니다. */
+    border-radius: 5px; /* 네모난 배경의 모서리를 둥글게 만듭니다. */
+    margin-top: 5px; /* 여백을 둡니다. */
+  }
+  
+  
+  
+  /* 푸터 스타일 */
+  section {
+    padding-bottom: 130px;
+  }
+  
+  footer {
+    width: 100%;
+    height: 90px;
+    bottom: 180px;
+    position: absolute;
+    border-top: 1px solid #c4c4c4;
+    padding-top: 15px;
+    color: #808080;
+    font-size: 12px;
+    text-align: center; /* 가운데 정렬 */
+  }
+  
+  footer a {
+    display: inline-block;
+    margin: 0 20px 10px 20px;
+    color: #808080; 
+    font-size: 14px;
+  }
+  
+  footer a:visited {
+    color: #808080;
+  }
+  
+  footer p {
+    margin-top: 0; margin-bottom: 0;   
+  }
+  
+  footer p span {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  /*결과*/
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  .uploaded-image {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  .personal-color {
+    color: #ffcc00;
+    font-weight: bold;
+  }
+  
+  .hair-dye-recommendation {
+    margin-top: 40px;
+  }
+  
+  .recommended-color {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  h3 {
+    color: #333;
+  }
+  
+  h4 {
+    color: #ffcc00;
+  }
+  
+  .recommended-color p {
+    color: #666;
+  }
+
+  /* 기존 스타일 유지 */
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .color-box {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50%;
+  }
+  
+  .golden-brown {
+    background-color: #996515;
+  }
+  
+  .plum-red {
+    background-color: #871F78;
+  }
+  
+  .pearl-gray {
+    background-color: #C0C0C0;
+  }
+  
+  .rose-blonde {
+    background-color: #FF66CC;
+  }
+  
+  .ice-blue {
+    background-color: #B5EAEA;
+  }
+  
+  #analysisChart {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }

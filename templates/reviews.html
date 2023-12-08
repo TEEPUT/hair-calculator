@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>리뷰 목록</title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/reviews.css">
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>리뷰 목록</h1>
+    <ul>
+        {% for review in reviews %}
+            <li>
+                <h3>{{ review.title }}</h3>
+                <p>{{ review.content }}</p>
+                <a href="/delete_review/{{ review.num }}" class="a-btn">삭제</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/review.html">새 리뷰 작성</a>
+
+
+
+    <!-- 네비게이션 -->
+    <section>
+        <nav>    
+            <div class="navbar">
+               <a href="main.html" class="nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+               <a href="map.html" class="active nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+               {% if nickname %}
+               <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+               {% else %}
+               <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+               {% endif %}
+     
+               {% if nickname %}
+                   <a href="personal.html" class="nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+               {% else %}
+                   <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+               {% endif %}
+     
+               {% if nickname %}
+                   <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+               {% else %}
+                   <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+               {% endif %}
+             </div>
+         </nav>
+       </section>
+       <!-- 네비게이션 -->
+</body>
+</html>

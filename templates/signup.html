@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <!-- 인코딩 및 타이틀 -->
+    <meta charset="utf-8"/>
+    <title>회원가입</title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/signup.css">
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+    <!-- 다음 주소 -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <!-- 자바 스크립트 -->
+    <script src="../static/js/signup.js"></script>
+
+    <!-- axios 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+
+    <!-- 회원가입 내용 -->
+    <div class="signup-box">
+        <h2 class="signup-h2">StyleHC 아이디로 스타일 관리하기!</h2>
+        <form method="POST" action="/signup.html">
+
+            <!-- 유저 -->
+            <div class="user-box">
+                <label class="user-text">아이디</label>
+                <input type="text" name="id" required value="아이디를 입력해주세요" class="input-box" maxlength = "30" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">성명</label>
+                <input type="text" name="name" required value="성명을 입력해주세요" class="input-box" maxlength = "15" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">닉네임</label>
+                <input type="text" name="nickname" required value="닉네임을 입력해주세요" class="input-box" maxlength = "15" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">비밀번호</label>
+                <input type="password" name="password" required value="비밀번호을 입력해주세요" class="input-box" maxlength = "50" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">이메일</label>
+                <input type="text" name="email" required value="이메일을 입력해주세요" class="input-box" maxlength = "50" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">성별</label>
+                <select name="gender" class="input-box" required>
+                    <option value="남자">남자</option>
+                    <option value="여자">여자</option>
+                </select>
+            </div>
+            <div class="user-box">
+                <label class="user-text">전화번호</label>
+                <input type="text" name="phnumber" required value="전화번호를 입력해주세요" class="input-box" maxlength = "11" onfocus="removeopacity(this)">
+            </div>
+
+
+            <div class="user-box11">
+                <input type="checkbox" id="isBusiness" onchange="toggleBusinessFields()" class="ubox">
+                <label for="isBusiness" class="user-text">사업자로 등록하기</label>
+            </div>
+
+            <!-- 사업자 -->
+            <div id="businessFields" style="display: none;">
+            <div class="user-box">
+                <label class="user-text">회사명</label>
+                <input type="text" name="company_name" value="회사명을 입력해주세요" class="input-box" maxlength = "50" onfocus="removeopacity(this)">
+            </div>
+            
+            <div class="user-box">
+                <label class="user-text">대표자명</label>
+                <input type="text" name="representative_name" value="대표자 성함을 입력해주세요" class="input-box" maxlength = "50" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">사업자 등록 번호</label>
+                <input type="text" name="business_registration_number" value="사업자 등록 번호를 입력해주세요" class="input-box" maxlength = "10" onfocus="removeopacity(this)">
+                <button onclick="checkBusinessNumber()">중복/실제 확인</button>
+                <span id="business_check_message"></span>
+            </div>
+            <div class="user-box">
+                <label class="user-text">법인 등록 번호</label>
+                <input type="text" name="corporation_registration_number" value="법인 등록 번호를 입력해주세요" class="input-box" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">업태</label>
+                <input type="text" name="business_type" value="업태를 입력해주세요" class="input-box" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">업종</label>
+                <input type="text" name="business_category_detail" value="업종을 입력해주세요" class="input-box" onfocus="removeopacity(this)">
+            </div>
+            <div class="user-box">
+                <label class="user-text">주소</label>
+                <input type="text" id="sample4_postcode" name="sample4_postcode" placeholder="우편번호" class="input-box2" maxlength="5" onfocus="removeopacity(this)">
+                <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="btn-ad"><br>
+                <input type="text" id="sample4_roadAddress" name="sample4_roadAddress" placeholder="도로명주소" class="input-box2" onfocus="removeopacity(this)">
+                <input type="text" id="sample4_jibunAddress" name="sample4_jibunAddress" placeholder="지번주소" class="input-box3" onfocus="removeopacity(this)">
+                <span id="guide" style="color:#999;display:none"></span>
+                <input type="text" id="sample4_detailAddress" name="sample4_detailAddress" placeholder="상세주소" class="input-box2" onfocus="removeopacity(this)">
+                <input type="text" id="sample4_extraAddress" name="sample4_extraAddress" placeholder="참고항목" class="input-box3" onfocus="removeopacity(this)">
+            </div>
+            </div>
+            <button type="submit" class="btn1">가입하기</button>
+        </form>
+    </div>
+
+  <!-- 네비게이션 -->
+  <section>
+    <nav>    
+        <div class="navbar">
+           <a href="main.html" class="nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+           <a href="map.html" class="nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+           {% if nickname %}
+           <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+           {% else %}
+           <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+           {% endif %}
+ 
+           {% if nickname %}
+               <a href="personal.html" class="nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+           {% else %}
+               <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+           {% endif %}
+ 
+           {% if nickname %}
+               <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+           {% else %}
+               <a href="login.html" class="active nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+           {% endif %}
+         </div>
+     </nav>
+   </section>
+   <!-- 네비게이션 -->
+
+</body>
+</html>

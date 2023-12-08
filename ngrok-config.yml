@@ -1,0 +1,7 @@
+version: 2
+authtoken: 2YOysKDt4Xt8ZJWraP04RkV36Jh_4rqeZWA4RvvyEnGrqkkD8
+tunnels:
+  your-app:
+    addr: 8080
+    proto: http
+    hostname: stylehc.ngrok.io

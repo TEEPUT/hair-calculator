@@ -1,0 +1,179 @@
+<!-- salon.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>미용실 세부페이지</title>
+    <!-- 필요한 스타일이 있다면 추가 -->
+    <link rel="stylesheet" href="../static/css/sub.css">
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+    <!-- 자바스크립트 -->
+    <script src="../static/js/sub.js"></script>
+
+</head>
+<body>
+    <!-- 로고 및 검색기능 -->
+
+    <div class="container-fluid">
+        <div class="banner_main">
+            <div class="container">
+                <div><a href="main.html"><img src="../static/img/logo.png" class="logo"></a></div>
+            </div>
+        </div>
+    </div>
+<!-- 로고 및 검색기능 끝 -->
+
+    <!-- 미용실 세부페이지 내용 -->
+    <div id="salon-detail-container">
+        <!-- 미용실 사진 -->
+        <img src="../static/img/mainpr/shop2.jpg" class="salon-image" alt="미용실 사진">
+
+        <!-- 미용실 정보 섹션 -->
+        <section id="salon-section">
+            <h1>아버헤어 트리플점</h1>
+            <p>방문자리뷰: 19,300개  블로그리뷰: 390개</p>
+            <p>평점: 4.5</p>
+        </section>
+
+        <!-- 네비게이션 -->
+        <nav>
+            <div class="navbar1">
+                <a href="#information-section" class="nav-container1" onclick="showSection('information-section')">홈</a>
+                <a href="#price-section" class="nav-container1" onclick="showSection('price-section')">가격</a>
+                <a href="#designers-section" class="nav-container1" onclick="showSection('designers-section')">스타일리스트</a>
+            </div>
+        </nav>
+
+        <!-- 미용실 정보 섹션 -->
+        <section id="information-section" class="section">
+            <h2>미용실 정보</h2>
+            <!-- 미용실 정보 내용을 추가 -->
+            <p>위치: 인천 연수구 송도과학로16번길 33-1 트리플스트리트 A동 2층</p>
+            <p>영업시간</p>
+            <p>월 10:00 - 21:00</p>
+            <p>화 10:00 - 21:00</p>
+            <p>수 10:00 - 21:00</p>
+            <p>목 10:00 - 21:00</p>
+            <p>금 10:00 - 21:00</p>
+            <p>번호: 0507-1407-9360</p>
+        </section>
+
+        <!-- 미용실 가격 섹션 -->
+        <section id="price-section" class="section">
+            <h2>가격</h2>
+            <div class="price-item">
+                <p>남성커트(직급별상이)</p>
+                <p class="price">20,000원</p>
+            </div>
+            <div class="price-item">
+                <p>여성커트(직급별상이)</p>
+                <p class="price">25,000원</p>
+            </div>
+            <div class="price-item">
+                <p>남성일반펌(직급별상이)</p>
+                <p class="price">80,000원</p>
+            </div>
+            <div class="price-item">
+                <p>여성일반펌(직급별상이)</p>
+                <p class="price">100,000원</p>
+            </div>
+            <div class="price-item">
+                <p>열펌(직급별상이)</p>
+                <p class="price">150,000원</p>
+            </div>
+            <div class="price-item">
+                <p>남성염색(직급별상이)</p>
+                <p class="price">80,000원</p>
+            </div>
+            <div class="price-item">
+                <p>여성염색(직급별상이)</p>
+                <p class="price">88,000원</p>
+            </div>
+            <div class="price-item">
+                <p>케어(직급별상이)</p>
+                <p class="price">50,000원</p>
+            </div>
+        
+            
+            <!-- 나머지 가격 항목들도 동일한 구조로 작성 -->
+        </section>
+        
+
+        <!-- 디자이너 섹션 -->
+        <section id="designers-section" class="section">
+            <div class="stylist">
+                <div id="stylist-content"><img src="../static/img/mainpr/stylist2.jpg" class="pr1"></div>
+                <div class="stylist-content-text">수지 실장</div>
+                <div class="stylist-content-main">아버헤어 트리플점</div>
+                <div id="hair">#레이어드컷</div>
+                <div id="hair">#C컬펌</div>
+                <hr>
+            </div>
+                
+            <div class="stylist">
+                <div id="stylist-content"><img src="../static/img/mainpr/stylist5.jpg" class="pr1"></div>
+                <div class="stylist-content-text">채민 디자이너</div>
+                <div class="stylist-content-main">준오헤어 송도센트럴파크점</div>
+                <div id="hair">#댄디컷</div>
+                <div id="hair">#가르마펌</div>
+                <div id="hair">#가일컷</div>
+                <div id="hair">#애즈펌</div>
+                <hr>
+            </div>
+                
+            <div class="stylist">
+                <div id="stylist-content"><img src="../static/img/mainpr/stylist3.jpg" class="pr1"></div>
+                <div class="stylist-content-text">설현 팀장</div>
+                <div class="stylist-content-main">고정현헤어 송도 오네스타점</div>
+                <div id="hair">#레이어드컷</div>
+                <div id="hair">#C컬펌</div>
+                <hr>
+            </div>
+
+            <div class="stylist">
+                <div id="stylist-content"><img src="../static/img/mainpr/stylist6.jpg" class="pr1"></div>
+                <div class="stylist-content-text">채림 디자이너</div>
+                <div class="stylist-content-main">로이드 인천송도점</div>
+                <div id="hair">#열펌</div>
+                <hr>
+            </div>
+        </section>
+
+        <!-- 추가적인 섹션들을 필요에 따라 추가 -->
+    </div>
+
+    
+
+    <!-- 네비게이션 -->
+    <section>
+        <nav>    
+            <div class="navbar">
+                <a href="main.html" class="active nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+                <a href="map.html" class="nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+                {% if nickname %}
+                <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+                {% else %}
+                <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+                {% endif %}
+
+                {% if nickname %}
+                    <a href="personal.html" class="nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+                {% else %}
+                    <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+                {% endif %}
+                
+                {% if nickname %}
+                    <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+                {% else %}
+                    <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+                {% endif %}
+            </div>
+        </nav>
+    </section>
+
+</body>
+</html>

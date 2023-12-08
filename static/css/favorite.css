@@ -1,0 +1,46 @@
+body {
+    margin: 0px;
+}
+
+/*네비게이션*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 9999;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+  .navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+  }
+  
+  .navbar a.active {
+    background-color: gray;
+    color: white;
+  }
+  
+  .main {
+    margin-bottom: 30px;
+  }
+
+  .nav-container {
+    width: 20%;
+  }
+  
+/*네비게이션 끝*/

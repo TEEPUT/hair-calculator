@@ -1,0 +1,200 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFBE9;
+}
+
+/*네비게이션*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 9999;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+  .navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+  }
+  
+  .navbar a.active {
+    background-color: #E3CAA5;
+    color: white;
+  }
+  
+  .main {
+    margin-bottom: 30px;
+  }
+
+  .nav-container {
+    width: 20%;
+  }
+  
+/*네비게이션 끝*/
+/* 네비게이션 스타일 업데이트 */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #CEAB93;
+  padding: 0px;
+}
+.nav-container {
+  text-align: center;
+  text-decoration: none;
+  color: #FFFBE9;
+  padding: 10px 0;
+  flex: 1; /* 수정: 동일한 너비로 설정 */
+}
+.nav-container i {
+  font-size: 24px;
+}
+.active {
+  background-color: #AD8B73;
+}
+
+
+ .signup-box {
+  margin-left: 15%;
+  margin-right: 15%;
+ }
+
+ .signup-h2 {
+  position: relative;
+  margin: auto;
+  margin-top: 15%;
+  text-align: center;
+ }
+
+ .user-box {
+  right: 100%;
+  display: block;
+  text-align: left;
+  margin-top: 10%;
+  width: 100%;
+ }
+ 
+ .user-text {
+  position: relative;
+  display: block;
+  right: 0%;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+ }
+
+ .btn1 {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 20%;
+  margin-bottom: 70%;
+  border-radius: 8px;
+  border-style: double;
+  color: #333;
+  background-color: white;
+}
+
+.btn1:hover {
+  border-color: rgb(111, 111, 255);
+  background-color: rgb(224, 224, 255);
+}
+
+ .input-box {
+  width: 100%;
+  height: 40px;
+  border-style: double;
+  outline: none;
+  border-radius: 9px;
+  opacity: 0.6;
+ }
+
+ .input-box2 {
+  position: relative;
+  display: inline;
+  margin-bottom: 20px;
+  padding: 0%;
+  margin-left: 0%;
+  margin-right: 4.39%;
+  float: left;
+  width: 45%;
+  height: 40px;
+  border-style: double;
+  outline: none;
+  border-radius: 9px;
+  opacity: 0.6;
+ }
+
+ .input-box3 {
+  position: relative;
+  display: inline;
+  margin-bottom: 20px;
+  padding: 0%;
+  margin-left: 4.39%;
+  margin-right: 0%;
+  width: 45%;
+  height: 40px;
+  border-style: double;
+  outline: none;
+  border-radius: 9px;
+  opacity: 0.6;
+ }
+
+ .btn-ad {
+  background-color: white;
+  width: 45%;
+  height: 40px;
+  margin-bottom: 25px;
+  margin-left: 4.39%;
+  border-radius: 8px;
+  border-style: dashed;
+ }
+
+ .btn-ad:hover {
+  background-color: rgb(204, 204, 204);
+ }
+
+ .input-box:focus {
+  border-color: rgb(111, 111, 255);
+  background-color: rgb(224, 224, 255);
+  color: black;
+  opacity: 1;
+ }
+
+ .input-box2:focus {
+  border-color: rgb(111, 111, 255);
+  background-color: rgb(224, 224, 255);
+  color: black;
+  opacity: 1;
+ }
+
+ .input-box3:focus {
+  border-color: rgb(111, 111, 255);
+  background-color: rgb(224, 224, 255);
+  color: black;
+  opacity: 1;
+ }
+ 
+ .ubox {
+  width: 40px;
+  height: 40px;
+  margin-top: 120px;
+ }
+
+ .user-box11 {
+  text-align: center;
+ }

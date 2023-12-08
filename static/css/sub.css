@@ -1,0 +1,376 @@
+body {
+    height: 1900px;
+}
+
+/* Reset some default styles */
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#salon-detail-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.salon-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.navbar1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.nav-container1 {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-container1:hover {
+    background-color: #ddd;
+}
+
+.section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+    margin-top: 20px;
+}
+
+/* Style for the information section */
+#information-section p {
+    margin-bottom: 10px;
+}
+
+/* Style for the price section */
+#price-section p {
+    margin-bottom: 5px;
+}
+
+/* Style for the stylist section */
+.stylist {
+    margin-bottom: 20px;
+}
+
+.stylist-content-text {
+    font-weight: bold;
+}
+
+.stylist-content-main {
+    color: #666;
+}
+
+#hair {
+    margin-top: 5px;
+    color: #3498db;
+}
+
+.hr-line {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 15px 0;
+}
+
+/* Responsive styling for small screens */
+@media screen and (max-width: 600px) {
+    #salon-detail-container {
+        padding: 10px;
+    }
+
+    .navbar1 {
+        flex-direction: column;
+    }
+
+    .nav-container1 {
+        margin-bottom: 10px;
+    }
+}
+
+/* 추가된 부분 시작 */
+
+/* 메인 배경 색상과 전반적인 컨셉에 맞게 조정 */
+body, .main-box, .slideshow-container, .stylist, .salon {
+    background-color: #FFFBE9;
+}
+
+/* 네비게이션과 푸터에도 색상과 디자인 요소 조정 */
+.navbar1, footer {
+    background-color: #CEAB93;
+    color: #FFFBE9;
+}
+
+.navbar1 a, footer a {
+    color: #FFFBE9;
+}
+
+.navbar1 a.active {
+    background-color: #AD8B73;
+}
+
+/* 버튼에 대한 스타일 조정 */
+button[type="submit"], .contents-btn {
+    background-color: #E3CAA5;
+    color: #AD8B73;
+}
+
+button[type="submit"]:hover, .contents-btn:hover {
+    background-color: #AD8B73;
+}
+
+/* 페이드 효과에 대한 스타일 조정 */
+.fade {
+    background-color: #FFFBE9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 기타 스타일 조정 */
+hr {
+    border-top: 1px solid #ddd;
+}
+
+/* 추가된 부분 끝 */
+
+
+/* 스타일러와 미용실 정보 스타일 */
+.stylist, .salon {
+    background-color: #FFFbe9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden; /* 이미지 모서리를 자를 수 있도록 설정 */
+}
+  
+  
+  .stylist img,.salon img {
+    width: 130px;
+    height: 130px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    float: left;
+  }
+  
+  .salon-content-text {
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 5px;
+  }
+  
+  .salon-content-main {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  .review {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-rating {
+    font-size: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .review-count {
+    color: #888;
+    font-size: 20px;
+    margin-top: 7px;
+  }
+  
+  .time {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 7px;
+  }
+  
+  .stylist-content-text {
+    font-weight: bold; /* 텍스트를 굵은 글꼴로 설정합니다. */
+    font-size: 24px; /* 텍스트 크기를 조정합니다. */
+  }
+  
+  .stylist-content-main {
+    color: gray; /* 텍스트 색상을 회색으로 설정합니다. */
+    font-size: 14px; /* 텍스트 크기를 조정합니다. */
+    font-style: italic; /* 텍스트에 이탤릭체를 적용합니다. */
+  }
+  
+  #hair {
+    display: inline-block; /* 네모난 배경을 위해 인라인 블록으로 설정합니다. */
+    padding: 5px 10px; /* 배경의 여백을 설정합니다. */
+    background-color: #b7b3b1; /* 배경색을 설정합니다. */
+    color: white; /* 텍스트 색상을 흰색으로 설정합니다. */
+    font-weight: bold; /* 텍스트를 굵은 글꼴로 설정합니다. */
+    border-radius: 5px; /* 네모난 배경의 모서리를 둥글게 만듭니다. */
+    margin-top: 5px; /* 여백을 둡니다. */
+  }
+  
+  /* 미용실 가격 섹션 스타일 */
+#price-section {
+    background-color: #FFFBE9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#price-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #CEAB93;
+    margin-bottom: 20px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.price-item p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #AD8B73;
+    font-size: 18px;
+}
+
+.container-fluid {
+    background-color: #FFFBE9;
+    padding: 10px 0;
+  }
+  .banner_main {
+    text-align: center;
+    padding: 20px;
+  }
+  .logo {
+    max-width: 400px;
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 50%;
+    margin-bottom: 30px;
+    margin-top: 20px; /* 로고를 위로 20px 이동 */
+  }
+
+
+
+
+  footer {
+    width: 100%;
+    height: 90px;
+    bottom: 180px;
+    position: absolute;
+    border-top: 1px solid #c4c4c4;
+    padding-top: 15px;
+    color: #808080;
+    font-size: 12px;
+    text-align: center; /* 가운데 정렬 */
+    background-color: #FFFBE9;
+  }
+  
+  footer a {
+    display: inline-block;
+    margin: 0 20px 10px 20px;
+    color: #808080; 
+    font-size: 14px;
+  }
+  
+  footer a:visited {
+    color: #808080;
+  }
+  
+  footer p {
+    margin-top: 0; margin-bottom: 0;   
+  }
+  
+  footer p span {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+
+/*네비게이션*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 9999;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+  .navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+  }
+  
+  .navbar a.active {
+    background-color: #E3CAA5;
+    color: white;
+  }
+  
+  .main {
+    margin-bottom: 30px;
+  }
+
+  .nav-container {
+    width: 20%;
+  }
+  
+/*네비게이션 끝*/
+/* 네비게이션 스타일 업데이트 */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #CEAB93;
+  padding: 0px;
+}
+.nav-container {
+  text-align: center;
+  text-decoration: none;
+  color: #FFFBE9;
+  padding: 10px 0;
+  flex: 1; /* 수정: 동일한 너비로 설정 */
+}
+.nav-container i {
+  font-size: 24px;
+}
+.active {
+  background-color: #AD8B73;
+}

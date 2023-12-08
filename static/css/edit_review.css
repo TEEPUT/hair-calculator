@@ -1,0 +1,68 @@
+/* 전체 페이지 스타일 */
+body {
+    background-color: #FFFBE9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 20px; /* 페이지 여백 추가 */
+}
+
+/* 리뷰 수정 폼 스타일 */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid;
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 레이블 스타일 */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 입력 필드 스타일 */
+input[type="text"],
+textarea {
+    width: calc(100% - 12px); /* 테두리 고려한 너비 계산 */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 저장 버튼 스타일 */
+input[type="submit"] {
+    background-color: #CEAB93;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* '돌아가기' 버튼 스타일 */
+a[href="/reviews.html"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #CEAB93;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* '돌아가기' 버튼 호버 스타일 */
+a[href="/reviews.html"]:hover {
+    background-color: #CEAB93;
+}

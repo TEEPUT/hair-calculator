@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 인코딩 및 타이틀 -->
+    <meta charset="UTF-8">
+    <title> StyleHC 메인화면 </title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/main.css">
+
+    <!-- js -->
+    <script src="../static/js/main.js"></script>
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id ='wrap'>
+
+<!-- 로그인 정보 확인 -->
+
+<div class="user-info">
+    {% if nickname %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px; margin-left: 20px;">
+            <span style="font-weight: bold;">어서오세요, {{ nickname }}님!</span>
+            <a href="/logout" style="text-decoration: none; color: #AD8B73; margin-left: 20px;">로그아웃</a>
+
+            {% if session.get('business_registration_number') %}
+                {% if profile_exists %}
+                    <a href="pr2.html" style="text-align: right; position: relative; margin-left: 20px; text-decoration: none; color: #AD8B73;">프로필</a>
+                {% else %}
+                    <a href="info.html" style="text-align: right; position: relative; margin-left: 20px; text-decoration: none; color: #AD8B73;">프로필 만들기</a>
+                {% endif %}
+            {% endif %}
+        </p>
+    {% else %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px;">
+            로그인 되지 않았습니다.
+        </p>
+    {% endif %}
+</div>
+
+
+
+<!-- 로고 및 검색기능 -->
+
+        <div class="container-fluid">
+            <div class="banner_main">
+                <div class="container">
+                    <div><a href="main.html"><img src="../static/img/logo.png" class="logo"></a></div>
+
+                </div>
+            </div>
+        </div>
+    
+<!-- 로고 및 검색기능 끝 -->
+
+
+
+<!-- 컨텐츠 내용 -->
+    
+        <section>
+            <aside class="main-contents">
+            
+                <div class="slideshow-container">
+                    <div class="main-box fade">
+                            <img src="../static/img/mainpr/slide2.png" style="width:100%">
+                        <a href="#" class="contents-btn">스타일러 찾아가기</a>
+                    </div>
+                    <div class="main-box fade">
+                            <img src="../static/img/mainpr/shop.png" style="width:100%">
+                        <a href="#" class="contents-btn">미용실 찾아가기</a>
+                    </div>
+                    <div class="main-box fade">
+                            <img src="../static/img/mainpr/shop2-1.png" style="width:100%">
+                        <a href="#" class="contents-btn">미용실 찾아가기</a>
+                    </div>
+                    <div class="main-box fade">
+                            <img src="../static/img/mainpr/shop3.png" style="width:100%">
+                        <a href="#" class="contents-btn">미용실 찾아가기</a>
+                    </div>
+                    <div class="main-box fade">
+                            <img src="../static/img/mainpr/shop4.png" style="width:100%">
+                        <a href="#" class="contents-btn">미용실 찾아가기</a>
+                    </div>
+            
+                    <!-- 다음, 이전 이미지 버튼 -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <br>
+                    <!-- 현재 이미지를 알려주는 하단의 점 -->
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        <span class="dot" onclick="currentSlide(4)"></span> 
+                        <span class="dot" onclick="currentSlide(5)"></span> 
+                    </div>
+                </div>
+            </aside>
+
+
+            <main>
+                <div class="stylist" id="stylist-section">
+                        <h4><a href="stylist.html" class="contents-btn" onclick="showStylistContent()">디자이너</a></h4>
+            
+                    <div class="stylist">
+                        <div id="stylist-content"><img src="../static/img/mainpr/stylist2.jpg" class="pr1"></div>
+                        <div class="stylist-content-text">수지 실장</div>
+                        <div class="stylist-content-main">아버헤어 트리플점</div>
+                        <div id="hair">#레이어드컷</div>
+                        <div id="hair">#C컬펌</div>
+                        <hr>
+                    </div>
+                        
+                    <div class="stylist">
+                        <div id="stylist-content"><img src="../static/img/mainpr/stylist5.jpg" class="pr1"></div>
+                        <div class="stylist-content-text">채민 디자이너</div>
+                        <div class="stylist-content-main">준오헤어 송도센트럴파크점</div>
+                        <div id="hair">#댄디컷</div>
+                        <div id="hair">#가르마펌</div>
+                        <div id="hair">#가일컷</div>
+                        <div id="hair">#애즈펌</div>
+                        <hr>
+                    </div>
+                        
+                    <div class="stylist">
+                        <div id="stylist-content"><img src="../static/img/mainpr/stylist3.jpg" class="pr1"></div>
+                        <div class="stylist-content-text">설현 팀장</div>
+                        <div class="stylist-content-main">고정현헤어 송도 오네스타점</div>
+                        <div id="hair">#레이어드컷</div>
+                        <div id="hair">#C컬펌</div>
+                        <hr>
+                    </div>
+
+                    <div class="stylist">
+                        <div id="stylist-content"><img src="../static/img/mainpr/stylist6.jpg" class="pr1"></div>
+                        <div class="stylist-content-text">채림 디자이너</div>
+                        <div class="stylist-content-main">로이드 인천송도점</div>
+                        <div id="hair">#열펌</div>
+                        <hr>
+                    </div>
+
+                </div>
+                <div class="salon" id="salon-section">
+                    <h4><a href="salon.html" class="contents-btn">미용실</a></h4>
+                
+                    <div class="salon">
+                        <div id="salon-content"><img src="../static/img/mainpr/shop2.jpg" class="pr1"></div>
+                        <div class="salon-content-text">아버헤어 트리플점</div>
+                        <div class="salon-content-main">인천 연수구 송도과학로16번길 33-1 트리플스트리트 A동 2층</div>
+                        <div class="review">
+                            <span class="star-rating">4.5</span>
+                            <span class="review-count">(10,395)</span>
+                            <span class="time"> 10:00~21:00 </span> 
+                        </div>
+                        <hr>
+                    </div>
+
+                    <div class="salon">
+                        <div id="salon-content"><img src="../static/img/mainpr/shop3.png" class="pr1"></div>
+                        <div class="salon-content-text">고정현헤어 송도오네스타점</div>
+                        <div class="salon-content-main">인천 연수구 송도국제대로 157 오네스타 지하 1층에 위치해 있습니다</div>
+                        <div class="review">
+                            <span class="star-rating">4.89</span>
+                            <span class="review-count">(4,450)</span>
+                            <span class="time"> 10:00~22:00 </span> 
+                        </div>
+                        <hr>
+                    </div>
+
+                    <div class="salon">
+                        <div id="salon-content"><img src="../static/img/mainpr/shop5.jpg" class="pr1"></div>
+                        <div class="salon-content-text">준오헤어 송도센트럴파크점</div>
+                        <div class="salon-content-main">인천 연수구 센트럴로 194 a동 2층 221호</div>
+                        <div class="review">
+                            <span class="star-rating">4.96</span>
+                            <span class="review-count">(11,278)</span>
+                            <span class="time"> 10:00~20:30 </span>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <div class="salon">
+                        <div id="salon-content"><img src="../static/img/mainpr/shop6.jpg" class="pr1"></div>
+                        <div class="salon-content-text">라비앙르로즈 송도동점</div>
+                        <div class="salon-content-main">인천 연수구 하모니로 158 타임스페이스 C동 212호</div>
+                        <div class="review">
+                            <span class="star-rating">4.6</span>
+                            <span class="review-count">(3,994)</span>
+                            <span class="time"> 10:00~20:00 </span>
+                        </div>
+                        <hr>
+                    </div>
+
+                        
+                </div>
+            </main>
+        </section>
+
+
+<!-- 푸터 -->
+        <footer>
+            <nav>
+                <a href='https://cocoder.tistory.com' target='_blank'>Blog</a> |
+                <a href='https://github.com/cocoder16' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>저자 : cocoder</span><br/>
+                <span>이메일 : cocoder16@gmail.com</span><br/>
+                <span>Copyright 2020. cocoder. All Rights Reserved.</span>
+            </p>
+        </footer>
+<!-- 네비게이션 -->
+
+        <section>
+            <nav>    
+                <div class="navbar">
+                    <a href="main.html" class="active nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+                    <a href="map.html" class="nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+                    {% if nickname %}
+                    <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+                    {% else %}
+                    <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+                    {% endif %}
+
+                    {% if nickname %}
+                        <a href="personal.html" class="nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+                    {% else %}
+                        <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+                    {% endif %}
+                    
+                    {% if nickname %}
+                        <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+                    {% else %}
+                        <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+                    {% endif %}
+                </div>
+            </nav>
+        </section>
+    </div>
+
+
+</body>
+</html>

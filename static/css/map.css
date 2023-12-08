@@ -1,0 +1,379 @@
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* 
+* Always set the map height explicitly to define the size of the div element
+* that contains the map. 
+*/
+#map {
+  height: 100%;
+}
+
+/* 
+* Optional: Makes the sample page fill the window. 
+*/
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFBE9;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0px;
+  padding: 0px 100px;
+  z-index: 9999;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #E3CAA5;
+  color: white;
+}
+
+.main {
+  margin-bottom: 30px;
+}
+.nav-container {
+  width: 20%;
+}
+
+/* 하단 탭 네비게이션 끝 */
+
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.overlaybox {
+  position:relative;
+  width:330px;
+  height:250px;
+  background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;
+  background-size: 350px 280px;
+  padding:15px 10px;
+}
+.overlaybox div, ul {overflow:hidden;margin:0;padding:0;}
+.overlaybox li {list-style: none;}
+.overlaybox .boxtitle {
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;
+  margin-bottom:8px;
+}
+/* 가게 이미지 */
+.overlaybox .first {
+  position:relative;
+  width:247px;
+  height:136px;
+  background: url('../img/mainpr/2.jpg') no-repeat;
+  margin-bottom:8px;
+}
+.first .text {color:#fff;font-weight:bold;}
+/*가게 이미지 회색 오버레이*/
+.first .movietitle {
+  position:absolute;width:100%;
+  bottom:0;
+  background:rgba(0,0,0,0.4);
+  padding:7px 15px;
+  font-size:14px;
+  width: 190px;
+}
+.overlaybox ul {
+  width:247px;
+}
+/*내용 회색 오버레이*/
+.overlaybox li {
+  position:relative;
+  margin-bottom:2px;
+  background:#2b2d36;
+  padding:5px 10px;color:
+ #aaabaf;line-height: 1;
+  width: 200px;
+}
+.overlaybox li span {display:inline-block;}
+.overlaybox li .title {font-size:13px;}
+.overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
+.overlaybox li:hover {color:#fff;background:#d24545;}
+.overlaybox li:hover .up {background-position:0 0px;}
+.overlaybox li:hover .down {background-position:0 -20px;}   
+
+
+.pr1 {
+  text-decoration: none;
+  color:#fff;
+}
+
+/* 네비게이션 스타일 업데이트 */
+.navbar {
+display: flex;
+justify-content: space-around;
+background-color: #CEAB93;
+padding: 0px;
+}
+.nav-container {
+text-align: center;
+text-decoration: none;
+color: #FFFBE9;
+padding: 10px 0;
+flex: 1; /* 수정: 동일한 너비로 설정 */
+}
+.nav-container i {
+font-size: 24px;
+}
+.active {
+background-color: #AD8B73;
+}
+
+.overlaybox1 {
+  position:relative;
+  width:330px;
+  height:250px;
+  background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;
+  background-size: 350px 280px;
+  padding:15px 10px;
+}
+.overlaybox1 div, ul {overflow:hidden;margin:0;padding:0;}
+.overlaybox1 li {list-style: none;}
+.overlaybox1 .boxtitle {
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;
+  margin-bottom:8px;
+}
+/* 가게 이미지 */
+.overlaybox1 .first {
+  position:relative;
+  width:220px;
+  height:130px;
+  background: url('../img/mainpr/3.jpg') no-repeat;
+  background-size: 100%;
+  margin-bottom:8px;
+}
+.overlaybox1 ul {
+  width:247px;
+}
+/*내용 회색 오버레이*/
+.overlaybox1 li {
+  position:relative;
+  margin-bottom:2px;
+  background:#2b2d36;
+  padding:5px 10px;color:
+ #aaabaf;line-height: 1;
+  width: 200px;
+}
+.overlaybox1 li span {display:inline-block;}
+.overlaybox1 li .title {font-size:13px;}
+.overlaybox1 ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
+.overlaybox1 li:hover {color:#fff;background:#d24545;}
+.overlaybox1 li:hover .up {background-position:0 0px;}
+.overlaybox1 li:hover .down {background-position:0 -20px;}   
+
+
+.overlaybox2 {
+  position:relative;
+  width:330px;
+  height:250px;
+  background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;
+  background-size: 350px 280px;
+  padding:15px 10px;
+}
+.overlaybox2 div, ul {overflow:hidden;margin:0;padding:0;}
+.overlaybox2 li {list-style: none;}
+.overlaybox2 .boxtitle {
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;
+  margin-bottom:8px;
+}
+/* 가게 이미지 */
+.overlaybox2 .first {
+  position:relative;
+  width:220px;
+  height:130px;
+  background: url('../img/mainpr/4.jpg') no-repeat;
+  background-size: 100%;
+  margin-bottom:8px;
+}
+.overlaybox2 ul {
+  width:247px;
+}
+/*내용 회색 오버레이*/
+.overlaybox2 li {
+  position:relative;
+  margin-bottom:2px;
+  background:#2b2d36;
+  padding:5px 10px;color:
+ #aaabaf;line-height: 1;
+  width: 200px;
+}
+.overlaybox2 li span {display:inline-block;}
+.overlaybox2 li .title {font-size:13px;}
+.overlaybox2 ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
+.overlaybox2 li:hover {color:#fff;background:#d24545;}
+.overlaybox2 li:hover .up {background-position:0 0px;}
+.overlaybox2 li:hover .down {background-position:0 -20px;}   
+
+
+.overlaybox3 {
+  position:relative;
+  width:330px;
+  height:250px;
+  background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;
+  background-size: 350px 280px;
+  padding:15px 10px;
+}
+.overlaybox3 div, ul {overflow:hidden;margin:0;padding:0;}
+.overlaybox3 li {list-style: none;}
+.overlaybox3 .boxtitle {
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;
+  margin-bottom:8px;
+}
+/* 가게 이미지 */
+.overlaybox3 .first {
+  position:relative;
+  width:220px;
+  height:130px;
+  background: url('../img/mainpr/5.jpg') no-repeat;
+  background-size: 100%;
+  margin-bottom:8px;
+}
+.overlaybox3 ul {
+  width:247px;
+}
+/*내용 회색 오버레이*/
+.overlaybox3 li {
+  position:relative;
+  margin-bottom:2px;
+  background:#2b2d36;
+  padding:5px 10px;color:
+ #aaabaf;line-height: 1;
+  width: 200px;
+}
+.overlaybox3 li span {display:inline-block;}
+.overlaybox3 li .title {font-size:13px;}
+.overlaybox3 ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
+.overlaybox3 li:hover {color:#fff;background:#d24545;}
+.overlaybox3 li:hover .up {background-position:0 0px;}
+.overlaybox3 li:hover .down {background-position:0 -20px;}   
+
+.overlaybox4 {
+  position:relative;
+  width:330px;
+  height:250px;
+  background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;
+  background-size: 350px 280px;
+  padding:15px 10px;
+}
+.overlaybox4 div, ul {overflow:hidden;margin:0;padding:0;}
+.overlaybox4 li {list-style: none;}
+.overlaybox4 .boxtitle {
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;
+  margin-bottom:8px;
+}
+/* 가게 이미지 */
+.overlaybox4 .first {
+  position:relative;
+  width:220px;
+  height:130px;
+  background: url('../img/mainpr/6.jpg') no-repeat;
+  background-size: 100%;
+  margin-bottom:8px;
+}
+.overlaybox4 ul {
+  width:247px;
+}
+/*내용 회색 오버레이*/
+.overlaybox4 li {
+  position:relative;
+  margin-bottom:2px;
+  background:#2b2d36;
+  padding:5px 10px;color:
+ #aaabaf;line-height: 1;
+  width: 200px;
+}
+.overlaybox4 li span {display:inline-block;}
+.overlaybox4 li .title {font-size:13px;}
+.overlaybox4 ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
+.overlaybox4 li:hover {color:#fff;background:#d24545;}
+.overlaybox4 li:hover .up {background-position:0 0px;}
+.overlaybox4 li:hover .down {background-position:0 -20px;}   
+
+.overlaybox5 {
+  position:relative;
+  width:330px;
+  height:250px;
+  background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;
+  background-size: 350px 280px;
+  padding:15px 10px;
+}
+.overlaybox5 div, ul {overflow:hidden;margin:0;padding:0;}
+.overlaybox5 li {list-style: none;}
+.overlaybox5 .boxtitle {
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;
+  margin-bottom:8px;
+}
+/* 가게 이미지 */
+.overlaybox5 .first {
+  position:relative;
+  width:220px;
+  height:130px;
+  background: url('../img/mainpr/7.jpg') no-repeat;
+  background-size: 100%;
+  margin-bottom:8px;
+}
+.overlaybox5 ul {
+  width:247px;
+}
+/*내용 회색 오버레이*/
+.overlaybox5 li {
+  position:relative;
+  margin-bottom:2px;
+  background:#2b2d36;
+  padding:5px 10px;color:
+ #aaabaf;line-height: 1;
+  width: 200px;
+}
+.overlaybox5 li span {display:inline-block;}
+.overlaybox5 li .title {font-size:13px;}
+.overlaybox5 ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
+.overlaybox5 li:hover {color:#fff;background:#d24545;}
+.overlaybox5 li:hover .up {background-position:0 0px;}
+.overlaybox5 li:hover .down {background-position:0 -20px;}   

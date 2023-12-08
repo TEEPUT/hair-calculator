@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <!-- 인코딩 및 타이틀 -->
+	<meta charset="utf-8"/>
+	<title> StyleHC 필터 만들기 </title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/filter.css">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/52c8e90544.js" crossorigin="anonymous"></script>
+
+    <!-- 자바 스크립트 -->
+    <script type="module" src="../static/js/filter.js"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- jquery -->
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+  <!-- 로그인 정보 확인 -->
+  <div class="user-info">
+    {% if nickname %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px;">
+            <span style="font-weight: bold;">어서오세요, {{ nickname }}님!</span>
+            <a href="/logout" style="text-decoration: none; color: #AD8B73; margin-left: 10px;">로그아웃</a>
+        </p>
+    {% else %}
+        <p style="font-family: Arial, sans-serif; color: #333; font-size: 18px;">
+            로그인 되지 않았습니다.
+        </p>
+    {% endif %}
+</div>
+
+
+<div class="body">
+ <!-- Copyright 2023 The MediaPipe Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+     http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. -->
+<h1 class="main-h1">필터 등록하기!</h1>
+<h2 class="main-h2">정면에서 찍은 사진이여야 합니다.<br> 업로드 한 이미지를 클릭하면 헤어 부분만 남기고 배경을 제거할 것 입니다. <br> 무슨 스타일인지 입력하고 저장하기를 누르면 유저가 볼 수 있습니다.</h2>
+<div class="file-upload">
+    <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="setCanvasData()">
+
+        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+    
+        <div class="image-upload-wrap">
+          <input class="file-upload-input" type='file' name="file" onchange="readURL(this);" accept="image/*" />
+          <div class="drag-text">
+            <h3>드래그 앤 드랍으로 이미지를 넣어주세요</h3>
+          </div>
+        </div>
+    
+        <div class="file-upload-content">
+          <div class="segmentOnClick">
+            <canvas id="canvas" class="transformer"></canvas>
+            <img class="file-upload-image" src="#" alt="your image" crossorigin="anonymous" title="Click to get segmentation!"/>
+            <div class="image-title-wrap">
+              <div class="style-input">스타일명 : <input type="text" maxlength="30" name="style" class="input-text"></div>
+              <button type="button" onclick="removeUpload()" class="remove-image">다시하기</button>
+              <button type="submit" class="submit">저장하기</button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- 숨겨진 input 필드 추가 -->
+        <input type="hidden" name="filename" id="filename" value="" />
+    
+    </form>
+    
+    <script>
+        // canvas의 데이터를 설정하는 함수
+        function setCanvasData() {
+            let canvas = document.querySelector('.transformer');
+            let dataURL = canvas.toDataURL("image/png");
+            document.getElementById('filename').value = dataURL;
+        }
+    </script>
+    
+
+</div>
+
+<script>
+function readURL(input) {
+  if (input.files && input.files[0]) {
+
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.image-upload-wrap').hide();
+
+      $('.file-upload-image').attr('src', e.target.result);
+      $('.file-upload-content').show();
+
+      $('.image-title').html(input.files[0].name);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+
+  } else {
+    removeUpload();
+  }
+}
+
+function removeUpload() {
+  $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+  $('.file-upload-content').hide();
+  $('.image-upload-wrap').show();
+}
+
+$('.image-upload-wrap').bind('dragover', function () {
+    $('.image-upload-wrap').addClass('image-dropping');
+});
+$('.image-upload-wrap').bind('dragleave', function () {
+    $('.image-upload-wrap').removeClass('image-dropping');
+});
+
+</script>
+
+
+</section>
+
+
+</div>
+
+    <!-- 네비게이션 -->
+  <section>
+    <nav>    
+      <div class="navbar">
+         <a href="main.html" class="nav-container"><i class="fa-solid fa-house"><br><br>메인화면</i></a>
+         <a href="map.html" class="nav-container"><i class="fa-solid fa-map-location-dot"><br><br>지도검색</i></a>
+
+          {% if nickname %}
+          <a href="image.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+          {% else %}
+          <a href="login.html" class="nav-container"><i class="fa-solid fa-mask"><br><br>헤어필터</i></a>
+          {% endif %}
+
+         {% if nickname %}
+             <a href="personal.html" class="nav-container"><i class="fa-solid fa-star"><br><br>퍼스널컬러</i></a>
+         {% else %}
+             <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>퍼스널컬러</i></a>
+         {% endif %}
+
+         {% if nickname %}
+             <a href="information.html" class="nav-container"><i class="fa-solid fa-user"><br><br>정보수정</i></a>
+         {% else %}
+             <a href="login.html" class="nav-container"><i class="fa-solid fa-user"><br><br>로그인</i></a>
+         {% endif %}
+       </div>
+   </nav>
+   </section>
+   <!-- 네비게이션 -->
+
+</body>
+</html>

@@ -77,13 +77,13 @@ mediapipe의 image segmentation 모델을 사용했고 codepan에 업로드 돼 
   
 ![image (1)](https://github.com/TEEPUT/hair-calculator/assets/129711481/049f8afc-4d2b-46ef-babb-53f45141d8b7)
 
-**원본**
+원본
 
 
 ![image](https://github.com/TEEPUT/hair-calculator/assets/129711481/dce1b764-b117-4db0-99bf-9561d0f94afd)
 
-**결과**
-</div>
+결과
+</div><br><br>
 
 <div align="center">
 

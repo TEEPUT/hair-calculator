@@ -99,6 +99,18 @@ mediapipe의 모델을 불러와서 헤어 부분에 마스크를 씌웁니다<b
 해당 스타일 명을 입력하고 저장하기를 클릭하면 파일명과, 아이디, 사업자번호, 스타일로 images 데이터베이스 테이블에 저장하도록 로직을 구현했습니다 사진 같은 경우 uploads 파일을 따로 만들어서 아이디 중복을 피하기 위해 1.png, 2.png 이런식으로 숫자 1부터 증가하는 형식으로 만들었습니다<br><br>
 
 <div align="center">
+  
+![image (2)](https://github.com/TEEPUT/hair-calculator/assets/129711481/cc5d8d21-706b-435f-9544-63fe67142baf)
+
+원본
+
+
+![image (4)](https://github.com/TEEPUT/hair-calculator/assets/129711481/fe20e464-c7f0-491e-adee-194b8f3ecd71)
+
+결과
+</div><br><br>
+
+<div align="center">
 
 **퍼스널 컬러**
 
@@ -112,11 +124,16 @@ res 가 학습에 필요한 이미지를 저장하는 파일이고 src 파일이
 문제 : 퍼스널컬러 결과 값이 session 가장 최근에 들어갔던 정보를 기분으로 분석하여 띄워주는데 동시에 다른 기기에서 해당 분석을 클릭하면 데이터베이스에는 정상적으로 들어가는데 분석하는 단계에서 결과보기를 후에 클릭한 인원의 이미지가 나오는 문제점이 있습니다<br><br>
 
 <div align="center">
+  
+![image (5)](https://github.com/TEEPUT/hair-calculator/assets/129711481/aa165441-dab9-4856-baa2-47df26e5903b)
 
-**리뷰**
 
-</div>
-게시판 형태의 디자인으로 입력 삭제를 구현했습니다<br><br>
+
+![image (6)](https://github.com/TEEPUT/hair-calculator/assets/129711481/399b9804-e06e-44aa-9f88-2953652c132b)
+
+</div><br><br>
+<div align="center">
+
 
 <br><br><br><br>
 <h1> Last </h1><br>

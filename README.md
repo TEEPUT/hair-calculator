@@ -115,3 +115,16 @@ Ngrok로 받은 도메인을 기반으로 node js와 react native 를 통해 어
 Ngrok가 아닌 aws 를 사용하여 도메인을 주고 개발 환경을 옮기면 ios도 어플리케이션으로써 충분히 앱스토어에 등록 가능할 만큼 컴파일 할 수 있을 것으로 예상됩니다<br><br>
 
 마지막으로 server_start.bat 파일로 클릭 시 ngrok와 expo 어플리케이션을 실행 할 수 있도록 자동화 까지 끝냈습니다<br><br>
+
+
+<div align="center">
+  
+![image (1)](https://github.com/TEEPUT/hair-calculator/assets/129711481/049f8afc-4d2b-46ef-babb-53f45141d8b7)
+
+**원본**
+
+
+![image](https://github.com/TEEPUT/hair-calculator/assets/129711481/dce1b764-b117-4db0-99bf-9561d0f94afd)
+
+**결과**
+</div>

@@ -132,7 +132,6 @@ res 가 학습에 필요한 이미지를 저장하는 파일이고 src 파일이
 ![image (6)](https://github.com/TEEPUT/hair-calculator/assets/129711481/399b9804-e06e-44aa-9f88-2953652c132b)
 
 </div><br><br>
-<div align="center">
 
 
 <br><br><br><br>

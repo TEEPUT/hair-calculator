@@ -1,16 +1,23 @@
-<h1>기획</h1><br>
-Node js, flask framework, mediapipe, tensorflow, react native expo, html, javascript, css, mysql, python 입니다
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=social&logo=node.js&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=social&logo=flask&logoColor=white)
+<h1>Stack</h1><br>
+<div align=center> 
+  <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
+  <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"> 
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"><br>
+  <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/tensorflow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white">
+  <img src="https://img.shields.io/badge/expo-000020?style=for-the-badge&logo=expo&logoColor=white">
+</div>
 
-
-
-범용적이고 접근성 좋은 방식이 어플리케이션으로 생각하여 어플리케이션을 주로 전체 프론트를 설계했습니다.
+<h1>Plan</h1><br>
+범용적이고 접근성 좋은 방식이 어플리케이션으로 생각하여 어플리케이션을 주로 전체 프론트를 설계했습니다.<br><br>
 
 Ios, android 를 따로 개발하려면 따로 개발자를 사용 해야하고 서로 다른 부분도 많이 발생하며 버그도 두 os마다 따로 잡아야 한다고 생각하여 React native expo를 사용하여 반응형 웹 제작 후 웹뷰 어플리케이션으로 다시 컴파일 하는 형식을 목표로 처음 기획했습니다 
 
-<br><br><br><br>
-<h1>화면 구현</h1><br>
+<br><br>
+<h1>Implementation</h1><br>
 
 
 <div align="center">
@@ -100,7 +107,7 @@ res 가 학습에 필요한 이미지를 저장하는 파일이고 src 파일이
 게시판 형태의 디자인으로 입력 삭제를 구현했습니다<br><br>
 
 <br><br><br><br>
-<h1> 마무리 </h1><br>
+<h1> Last </h1><br>
 이렇게 웹 사이트를 구현하여 현재 웹 사이트에 도메인을 주려고 여러가지 공부했으나 Docker, Aws, Gcp 등 여러가지 시도하면서 마감기한까지 공부시간이 부족과 리눅스에 모든 환경을 옮길 시간이 부족하다 판단하고 리눅스 기반이 아닌 ngrok로 윈도우 기반으로 도메인를 주었습니다<br><br>
 
 Ngrok로 받은 도메인을 기반으로 node js와 react native 를 통해 어플리케이션으로 전환 시켰습니다 ios의 경우 안드로이드와는 별개의 설치 형태이고 윈도우 환경에서는 컴파일이 불가능 하여 안드로이드만 패키징 하여 어플리케이션 이미지와 대기 화면을 삽입하여 만들었고 ios의 경우 expo go 어플리케이션으로만 들어 갈 수 있도록 만들었습니다<br><br>

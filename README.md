@@ -61,7 +61,7 @@ GPS 를 기반으로 현재 위치에 대한 데이터를 가져와서 해당 �
 **헤어필터**
 
 </div>
-mediapipe의 image segmentation 모델을 사용했고 type script 를 다시 java script 로 다시 컴파일 하여 추가적인 코드를 삽입했습니다 <br><br>
+mediapipe의 image segmentation 모델을 사용했고 codepan에 업로드 돼 있는 오픈소스를 java script 로 다시 컴파일 하여 추가적인 코드를 삽입했습니다 <br><br>
 
 업로드 형식으로 코드를 1차 수정하였고 <br><br>
 

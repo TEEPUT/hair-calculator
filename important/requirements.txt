@@ -1,7 +1,0 @@
-flask
-flask_mysqldb
-pymysql
-Pillow
-numpy
-opencv-python
-requests

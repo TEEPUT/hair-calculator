@@ -1,0 +1,5 @@
+flask
+mysqlclient
+flask-mysqldb
+mediapipe
+pymysql

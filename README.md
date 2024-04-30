@@ -53,9 +53,11 @@ mediapipe의 image segmentation 모델을 사용했고 codepan에 업로드 돼 
 <div align="center">
   
 ![image (1)](https://github.com/TEEPUT/hair-calculator/assets/129711481/049f8afc-4d2b-46ef-babb-53f45141d8b7)
-원본
+<br>
+원본<br>
 ![image](https://github.com/TEEPUT/hair-calculator/assets/129711481/dce1b764-b117-4db0-99bf-9561d0f94afd)
-결과
+<br>
+결과<br>
 </div><br><br>
 <div align="center">
 **헤어 필터 제작**
@@ -67,9 +69,11 @@ mediapipe의 모델을 불러와서 헤어 부분에 마스크를 씌웁니다<b
 <div align="center">
   
 ![image (2)](https://github.com/TEEPUT/hair-calculator/assets/129711481/cc5d8d21-706b-435f-9544-63fe67142baf)
-원본
+<br>
+원본<br>
 ![image (4)](https://github.com/TEEPUT/hair-calculator/assets/129711481/fe20e464-c7f0-491e-adee-194b8f3ecd71)
-결과
+<br>
+결과<br>
 </div><br><br>
 <div align="center">
 **퍼스널 컬러**

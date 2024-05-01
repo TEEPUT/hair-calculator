@@ -27,7 +27,7 @@ app = Flask(__name__)
 
 
 # 데이터베이스 설정
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = 'teeput.synology.me'
 app.config['MYSQL_PORT'] = 3306
 app.config['MYSQL_USER'] = 'HC'
 app.config['MYSQL_PASSWORD'] = '1234'

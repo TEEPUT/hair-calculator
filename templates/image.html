@@ -74,20 +74,23 @@
     </div>
     <tbody id="imagesTableBody">
         <!-- 여기에 이미지 데이터가 채워집니다 -->
-    </tbody>
-    
+    </tbody>    
 </table>
 </div>
+
+  <hr>
+
 <h1 class="main-h1">선택한 스타일 확인!</h1>
 <div class="body-check">
 <img id="compositeImage" src="" alt="Composite Image" class="image-read">
 </div>
 
+  <hr>
 
 <h1 class="main-h1">내 사진에 시뮬레이션!</h1>
 <h2 class="main-h2">★주의사항★<br>앞머리를 뒤로 넘겨 정리한 사진이여야 합니다. <br> 정면에서 찍은 사진이여야 합니다.<br> 아무런 반응이 없다면 스타일 찾기에서 원하는 스타일을 선택해주세요. <br> 선택 하셨다면 방향키를 눌러보세요 선택하신 헤어가 나옵니다.</h2>
 <div class="file-upload">
-        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+        <button class="file-upload-btn" type="button" onclick="removeUpload()"> 다시하기! </button>
         <div class="image-upload-wrap">
           <input class="file-upload-input" type='file' name="file" onchange="readURL(this);" accept="image/*" />
           <div class="drag-text">
@@ -101,7 +104,6 @@
             <canvas id="overlayCanvas" class="overlayCanvas" style="width: 300%;"></canvas>
             <img class="file-upload-image" src="#" alt="your image" crossorigin="anonymous" title="Click to get segmentation!"/>
             <div class="image-title-wrap">
-              <button type="button" onclick="removeUpload()" class="remove-image"> 다시하기 </button>
             </div>
           </div>
         </div>
@@ -144,18 +146,21 @@ function readURL(input) {
   }
 }
 
-function removeUpload() {
-  $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-  $('.file-upload-content').hide();
-  $('.image-upload-wrap').show();
-}
+// function removeUpload() {
+//   $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+//   $('.file-upload-content').hide();
+//   $('.image-upload-wrap').show();
+// }
 
-$('.image-upload-wrap').bind('dragover', function () {
-    $('.image-upload-wrap').addClass('image-dropping');
-});
-$('.image-upload-wrap').bind('dragleave', function () {
-    $('.image-upload-wrap').removeClass('image-dropping');
-});
+// $('.image-upload-wrap').bind('dragover', function () {
+//     $('.image-upload-wrap').addClass('image-dropping');
+// });
+// $('.image-upload-wrap').bind('dragleave', function () {
+//     $('.image-upload-wrap').removeClass('image-dropping');
+// });
+function removeUpload() {
+  location.reload();
+}
 
 </script>
 

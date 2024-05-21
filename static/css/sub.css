@@ -104,10 +104,6 @@ h1, h2, p {
 
 /* 추가된 부분 시작 */
 
-/* 메인 배경 색상과 전반적인 컨셉에 맞게 조정 */
-body, .main-box, .slideshow-container, .stylist, .salon {
-    background-color: #FFFBE9;
-}
 
 /* 네비게이션과 푸터에도 색상과 디자인 요소 조정 */
 .navbar1, footer {
@@ -135,7 +131,6 @@ button[type="submit"]:hover, .contents-btn:hover {
 
 /* 페이드 효과에 대한 스타일 조정 */
 .fade {
-    background-color: #FFFBE9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -150,7 +145,6 @@ hr {
 
 /* 스타일러와 미용실 정보 스타일 */
 .stylist, .salon {
-    background-color: #FFFbe9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -224,7 +218,6 @@ hr {
   
   /* 미용실 가격 섹션 스타일 */
 #price-section {
-    background-color: #FFFBE9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -257,7 +250,6 @@ hr {
 }
 
 .container-fluid {
-    background-color: #FFFBE9;
     padding: 10px 0;
   }
   .banner_main {
@@ -288,7 +280,6 @@ hr {
     color: #808080;
     font-size: 12px;
     text-align: center; /* 가운데 정렬 */
-    background-color: #FFFBE9;
   }
   
   footer a {

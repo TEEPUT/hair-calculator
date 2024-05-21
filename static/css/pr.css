@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FFFBE9;
   overflow-x: hidden;
   height: 1200px;
 }
@@ -700,16 +699,11 @@ bottom: -5px;
 
 .content {
   display: none;
-  background-color: #FFFBE9;
-}
-.info {
-  background-color: #FFFBE9;
 }
 
 #info {
   position: relative;
   height: 700px;
-  background-color:#FFFBE9;
   margin-top: 150px;
   display: block;
   z-index: -1;
@@ -720,7 +714,6 @@ bottom: -5px;
   position: relative;
   height: 600px;
   margin-top: 150px;
-  background-color:#FFFBE9;
   display: block;
   z-index: -1;
   text-align: center; 
@@ -730,7 +723,6 @@ bottom: -5px;
   position: relative;
   height: 600px;
   margin-top: 150px;
-  background-color:#FFFBE9;
   display: block;
   z-index: -1;
   text-align: center;

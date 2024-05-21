@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FFFBE9;
 }
 
 /*네비게이션*/
@@ -53,9 +52,10 @@ body {
 html {
   height: 100%;
 }
+
 body {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
   height: 1200px;
 }
@@ -98,9 +98,10 @@ body {
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
@@ -109,8 +110,8 @@ body {
   transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
   top: -20px;
   left: 0;
   color: #03e9f4;
@@ -136,9 +137,9 @@ body {
   color: #E3CAA5;
   border-radius: 5px;
   box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
 }
 
 .login-box a span {
@@ -159,7 +160,9 @@ body {
   0% {
     left: -100%;
   }
-  50%,100% {
+
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -178,7 +181,9 @@ body {
   0% {
     top: -100%;
   }
-  50%,100% {
+
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -197,7 +202,9 @@ body {
   0% {
     right: -100%;
   }
-  50%,100% {
+
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -216,7 +223,9 @@ body {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+
+  50%,
+  100% {
     bottom: 100%;
   }
 }

@@ -3,3 +3,11 @@ mysqlclient
 flask-mysqldb
 mediapipe
 pymysql
+colormath
+scikit-image
+scikit-learn
+cmake
+dlib
+cmake
+imutils
+scipy

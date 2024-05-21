@@ -27,11 +27,11 @@ app = Flask(__name__)
 
 
 # 데이터베이스 설정
-app.config['MYSQL_HOST'] = 'teeput.synology.me'
-app.config['MYSQL_PORT'] = 3306
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1234'
-app.config['MYSQL_DB'] = 'mysql'
+app.config['MYSQL_HOST'] = '호스트'
+app.config['MYSQL_PORT'] = 포트번호
+app.config['MYSQL_USER'] = '유저'
+app.config['MYSQL_PASSWORD'] = '비밀번호'
+app.config['MYSQL_DB'] = '데이터베이스'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
@@ -924,5 +924,4 @@ def qr():
 
 
 if __name__ == "__main__":
-    # app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
-    app.run('0.0.0.0',port=5123)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

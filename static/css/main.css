@@ -2,8 +2,6 @@ html ,body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FFFBE9;
-
 }
 
 #wrap {
@@ -58,7 +56,6 @@ html ,body {
   text-align: left;
 }
 .container-fluid {
-  background-color: #FFFBE9;
   padding: 10px 0;
 }
 .banner_main {
@@ -108,7 +105,6 @@ button[type="submit"] {
 }
 
 .main-box{
-  background-color: #FFFBE9;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -244,12 +240,23 @@ hr {
 
 
 /* 스타일러와 미용실 정보 스타일 */
+main {
+  width: 95%;
+  margin: 0 auto;
+}
 .stylist, .salon {
   background-color: #FFFbe9;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.2);
+  margin-bottom: 60px;
+}
+#stylist-section > .stylist:hover {
+  box-shadow: 0 0 14px gray;
+}
+
+#salon-section > .salon:hover {
+  box-shadow: 0 0 14px gray;
 }
 
 .stylist img,.salon img {
@@ -258,6 +265,7 @@ hr {
   margin-right: 10px;
   padding-bottom: 10px;
   float: left;
+  object-fit: cover;
 }
 
 .salon-content-text {
@@ -314,6 +322,8 @@ hr {
   border-radius: 5px; /* 네모난 배경의 모서리를 둥글게 만듭니다. */
   margin-top: 5px; /* 여백을 둡니다. */
 }
+
+
 
 
 
@@ -378,4 +388,167 @@ footer p span {
 .profile-btn {
   text-align: right;
   text-decoration: none;
+}
+
+/* 반응형 폰트 크기 */
+@media (max-width: 1200px) {
+  html, body {
+    font-size: 1.5vw;
+  }
+
+  .navbar a {
+    font-size: 2vw;
+  }
+
+  input[type="text"] {
+    font-size: 1.4vw;
+  }
+
+  button[type="submit"] {
+    font-size: 1.4vw;
+  }
+
+  .star-rating {
+    font-size: 2.3vw;
+  }
+
+  .review-count, .time {
+    font-size: 1.8vw;
+  }
+
+  .stylist-content-text {
+    font-size: 2vw;
+  }
+
+  .stylist-content-main {
+    font-size: 1.2vw;
+  }
+
+  .salon-content-text {
+    font-size: 1.5vw;
+  }
+
+  .salon-content-main {
+    font-size: 1vw;
+  }
+
+  footer {
+    font-size: 1.1vw;
+  }
+
+  footer a {
+    font-size: 1.2vw;
+  }
+
+  .style-btn {
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 2vw;
+  }
+
+  .navbar a {
+    font-size: 2.5vw;
+  }
+
+  input[type="text"] {
+    font-size: 1.8vw;
+  }
+
+  button[type="submit"] {
+    font-size: 1.8vw;
+  }
+
+  .star-rating {
+    font-size: 2.5vw;
+  }
+
+  .review-count, .time {
+    font-size: 2vw;
+  }
+
+  .stylist-content-text {
+    font-size: 2.2vw;
+  }
+
+  .stylist-content-main {
+    font-size: 1.4vw;
+  }
+
+  .salon-content-text {
+    font-size: 1.8vw;
+  }
+
+  .salon-content-main {
+    font-size: 1.2vw;
+  }
+
+  footer {
+    font-size: 1.5vw;
+  }
+
+  footer a {
+    font-size: 1.3vw;
+  }
+
+  .style-btn {
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    font-size: 3vw;
+  }
+
+  .navbar a {
+    font-size: 3.5vw;
+  }
+
+  input[type="text"] {
+    font-size: 2.5vw;
+  }
+
+  button[type="submit"] {
+    font-size: 2.5vw;
+  }
+
+  .star-rating {
+    font-size: 3vw;
+  }
+
+  .review-count, .time {
+    font-size: 2.5vw;
+  }
+
+  .stylist-content-text {
+    font-size: 3vw;
+  }
+
+  .stylist-content-main {
+    font-size: 2vw;
+  }
+
+  .salon-content-text {
+    font-size: 2.5vw;
+  }
+
+  .salon-content-main {
+    font-size: 2vw;
+  }
+
+  footer {
+    font-size: 2vw;
+  }
+
+  footer a {
+    font-size: 1.8vw;
+  }
+
+  .style-btn {
+    font-size: 1.8vw;
+  }
 }

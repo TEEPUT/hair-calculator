@@ -1,4 +1,4 @@
-![캡스톤 디자인 시연 (1)](https://github.com/TEEPUT/hair-calculator/assets/129711481/775ee50e-a5ed-4fb4-bf45-d8a1a4cacd6f)<h1>📌 Stack</h1><br>
+<h1>📌 Stack</h1><br>
 <div align=center> 
   <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
   <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"> 

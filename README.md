@@ -1,4 +1,4 @@
-<h1>📌 Stack</h1><br>
+![캡스톤 디자인 시연 (1)](https://github.com/TEEPUT/hair-calculator/assets/129711481/775ee50e-a5ed-4fb4-bf45-d8a1a4cacd6f)<h1>📌 Stack</h1><br>
 <div align=center> 
   <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
   <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"> 
@@ -20,28 +20,28 @@ Ios, android 를 따로 개발하려면 따로 개발자를 사용 해야하고 
 
 
 <div align="center">
-**메인화면**
+<strong>메인 화면</strong>
 </div>
 로그인 할 때 session 에 필요한 정보를 쿠키로 저장하고 해당 데이터에 맞춰서 닉네임 정보 로그아웃 프로필이 나오게 구현 했으며 네비게이션 또한 로그인 상태를 session 으로 확인 후 로그인 네비게이션이 정보수정 네비게이션으로 바뀌도록 로직을 넣었습니다 flask 의 jinja2 엔진을 사용하여 쉽게 구현할 수 있었습니다 <br><br>
 프로필의 경우 session 으로 users 테이블에서 저장했던 사업자 번호로 profiles 테이블을 검색하여 일치하는 사업자 번호가 없을 시 프로필 생성 html로 이동하도록 구현했습니다 일치하는 경우 profiles 테이블에서 다른 데이터들을 읽어서 프로필 화면에 잘 나오도록 구현했습니다 <br><br>
 <div align="center">
-**로그인 및 회원가입**
+<strong>로그인 및 회원가입</strong>
 </div>
 유저의 경우 아이디, 성명, 닉네임 등 필요한 정보를 입력하고 사업자의 경우 회사명, 회사 위치, 사업자 등록 번호 등 데이터베이스에 저장하고 불러오기 위한 정보들을 추가적으로 입력하게 만들었습니다 <br>
 사업자 등록 번호의 경우 공공 데이터 포탈에서 사업자 번호 확인을 위한 API를 가져왔습니다 <br><br>
 주소 같은 경우에도 카카오에서 도로명 주소나 지역명을 입력하면 찾아주는 API를 가져왔습니다 <br><br>
 <div align="center">
-**정보수정**
+<strong>정보 수정</strong>
 </div>
 데이터베이스에서 Users 테이블을 Select 하여 비밀번호를 제외 한 모든 데이터들을 읽어 미리 입력되게 하였고 비밀번호는 현재 비밀번호와 새로운 비밀번호를 입력하여 일치 하는지 확인하고 일치 해야 정보가 변경되게 만들었습니다 <br><br>
 <div align="center">
-**지도검색**
+<strong>지도 검색</strong>
 </div>
 GPS 를 기반으로 현재 위치에 대한 데이터를 가져와서 해당 위치에 마커를 생성하도록 만들었습니다 그 외 다른 미용실은 고정된 값이며 만약 정상 서비스 시 스타일러들이 회원가입으로 데이터 증가 및 위치에 대한 진위 확인 후 추가적으로 마커를 생성하여 더 다양한 컨텐츠를 보여줄 수 있을거라고 확신합니다<br><br>
 맵의 경우 kakao map API를 사용하여 만들었습니다<br><br>
 지도에서 미용실 마커의 경우 유저가 선택을 하여 클릭 시 백엔드에서 해당하는 사업자 번호를 읽어 그 외 다른 데이터들을 추가적으로 읽고 이에 맞춰서 프로필이 보이도록 생성됩니다 마찬가지로 session 에서 사업자 번호를 읽는 로직과 같이 해당 페이지로 이동 후 사업자 번호가 일치하면 헤어필터 만들기가 추가적으로 보이도록 만들었습니다<br><br>
 <div align="center">
-**헤어필터**
+<strong>헤어 필터</strong>
 </div>
 mediapipe의 image segmentation 모델을 사용했고 codepan에 업로드 돼 있는 오픈소스를 java script 로 다시 컴파일 하여 추가적인 코드를 삽입했습니다 <br><br>
 업로드 형식으로 코드를 1차 수정하였고 <br><br>
@@ -59,7 +59,7 @@ mediapipe의 image segmentation 모델을 사용했고 codepan에 업로드 돼 
 결과<br>
 </div><br><br>
 <div align="center">
-**헤어 필터 제작**
+<strong>헤어 필터 제작</strong>
 </div>
 지도에서 말씀드린것과 같이 session 에 사업자 번호가 있어야만 들어갈 수 있으며 헤어 필터 부분에서 만든것과 대부분 동일하게 만들었습니다<br><br>
 mediapipe의 모델을 불러와서 헤어 부분에 마스크를 씌웁니다<br><br>
@@ -75,17 +75,18 @@ mediapipe의 모델을 불러와서 헤어 부분에 마스크를 씌웁니다<b
 결과<br>
 </div><br><br>
 <div align="center">
-**퍼스널 컬러**
+<strong>퍼스널 컬러</strong>
 </div>
 res 가 학습에 필요한 이미지를 저장하는 파일이고 src 파일이 퍼스널 컬러 진단 부분입니다 퍼스널컬러 진단 파이썬 코드는 제가 작성한 코드가 아닙니다 백엔드에서 로직만 구현 했습니다<br><br>
 퍼스널 컬러를 클릭 시 이미지를 업로드 하는 화면이 나오는데 자신의 이미지 파일이나 사진을 업로드하고 결과 보기를 클릭하면 personal 데이터베이스 테이블에 입력 되도록 하였습니다 퍼스널 컬러의 경우 추가적인 데이터 수집이 따로 필요 없으므로 결과화면에서 어떤 사진을 가져올지 필요한 파일 이름과 퍼스널 컬러도 로그인이 필요하여 로그인한 id만 데이터베이스에 저장하도록 하였습니다<br><br>
 추가적으로 로직에 대해 설명해드리면 데이터베이스에 사진이 저장되면 가장 최근에 저장했던 이미지 파일 명으로 src 파일에 들어 가 ’ python personal.py —image 데이터베이스에 저정한 이미지 파일명 ‘ 명령어를 실행합니다 그러면 해당 이미지 파일의 퍼스널컬러를 진단하고 그 결과를 줍니다 이 결과값이 디코딩 형식으로 전달되는데 utf-8 로 다시 인코딩합니다 다음으로 필요한 데이터를 추출하여 jinja2 엔진을 사용하여 결과값을 html에 보냅니다 보낸 값을 자바 스크립트 제이스델리버 chart 를 사용하여 표로 보여줍니다 그리고 결과 값에 맞춰서 데이터셋에 준비한 염색추천 데이터를 랜덤으로 4가지 선택하여 css랑 html에 보여주도록 설계 및 구현했습니다<br><br>
 문제 : 퍼스널컬러 결과 값이 session 가장 최근에 들어갔던 정보를 기분으로 분석하여 띄워주는데 동시에 다른 기기에서 해당 분석을 클릭하면 분석하는 단계에서 결과보기를 후에 클릭한 인원의 이미지가 나오는 문제점이 있습니다<br><br>
+
 <div align="center">
-  
-![image (5)](https://github.com/TEEPUT/hair-calculator/assets/129711481/aa165441-dab9-4856-baa2-47df26e5903b)
-![image (6)](https://github.com/TEEPUT/hair-calculator/assets/129711481/399b9804-e06e-44aa-9f88-2953652c132b)
+  <img src="https://github.com/TEEPUT/hair-calculator/assets/129711481/f3f4f49b-e127-4076-8887-1ddb7c2a1750" alt="메인 헤더" width="700"/>
+  <p>퍼스널컬러</p>
 </div>
+
 
 
 <br><br><br><br>
